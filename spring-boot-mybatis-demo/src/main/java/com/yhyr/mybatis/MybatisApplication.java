@@ -26,7 +26,7 @@ public class MybatisApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings){
 		List<UserInfo> userInfoList = userService.getUserInfo();
-		userInfoList.stream().forEach(userInfo -> System.out.println("name is : " + userInfo.getName() + "; sex is : " + userInfo.getSex() + "; age is : " + userInfo.getAge()));
-
+		userInfoList.stream().forEach(userInfo
+				-> System.out.println("name is : " + userInfo.getName() + "; sex is : " + userInfo.getSex() + "; age is : " + userInfo.getAge()));
 	}
 }
