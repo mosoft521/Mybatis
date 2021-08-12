@@ -39,7 +39,7 @@ public class DynamicApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 		/**
-		 * 获取maste数据库信息
+		 * 获取master数据库信息
 		 */
 		DataSourceContextHolder.setDBType("default");
 		List<UserInfo> userInfoList = userService.getUserInfo();
@@ -55,7 +55,7 @@ public class DynamicApplication implements CommandLineRunner {
 
 		DruidDataSource dynamicDataSource = new DruidDataSource();
 		dynamicDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dynamicDataSource.setUrl("jdbc:mysql://" + dbInfo.getDbIp() + ":" + dbInfo.getDbPort() + "/" + dbInfo.getDbName() + "?characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull");
+		dynamicDataSource.setUrl("jdbc:mysql://" + dbInfo.getDbIp() + ":" + dbInfo.getDbPort() + "/" + dbInfo.getDbName() + "?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8&autoReconnect=true");
 		dynamicDataSource.setUsername(dbInfo.getDbUser());
 		dynamicDataSource.setPassword(dbInfo.getDbPasswd());
 
