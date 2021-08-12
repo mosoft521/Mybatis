@@ -14,7 +14,7 @@ CREATE TABLE `student_info` (
   `grade_name` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- mybatis_slave 实际是master类型
+-- mybatis_master
 CREATE TABLE `db_info` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `db_name` varchar(20) COLLATE utf8_bin DEFAULT NULL,
@@ -25,5 +25,5 @@ CREATE TABLE `db_info` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-INSERT INTO `mybatis_slave`.`db_info`(`id`, `db_name`, `db_ip`, `db_port`, `db_user`, `db_passwd`)
+INSERT INTO `mybatis_master`.`db_info`(`id`, `db_name`, `db_ip`, `db_port`, `db_user`, `db_passwd`)
  VALUES (1, 'mybatis_demo2', 'localhost', '3306', 'root', 'admin');

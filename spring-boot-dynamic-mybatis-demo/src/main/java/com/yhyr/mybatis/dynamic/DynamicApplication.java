@@ -39,14 +39,14 @@ public class DynamicApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 		/**
-		 * 获取master数据库信息
+		 * 获取default数据库信息
 		 */
 		DataSourceContextHolder.setDBType("default");
 		List<UserInfo> userInfoList = userService.getUserInfo();
 		userInfoList.stream().forEach(userInfo -> System.out.println("name is : " + userInfo.getName() + "; sex is : " + userInfo.getSex() + "; age is : " + userInfo.getAge()));
 
 		/**
-		 * 根据slave数据源获取目标数据库信息
+		 * 根据master数据源获取slave目标数据库信息
 		 */
 		DataSourceContextHolder.setDBType("master");
 		int primayrId = 1;
